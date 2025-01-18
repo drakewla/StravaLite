@@ -9,7 +9,7 @@ Select "Request Your Archive" and wait for an email from Strava (be patient, it 
 
 ## How to Use
 
-1. **Save the script:** Save the script as a Python file (e.g., `strava_filter.py`).
+1. **Save the script:** Save the script as a Python file (e.g., `StravaLite.py.py`).
 2. **Install dependencies:** They are likely already installed on your system. If some dependencies are missing, make sure you have the required Python libraries installed (`zipfile`, `csv`, `tempfile`, `os`, `argparse`). You can install them using your package manager or :
 
   ```bash
@@ -18,7 +18,7 @@ Select "Request Your Archive" and wait for an email from Strava (be patient, it 
 3. **Run the script**: Open a terminal, navigate to the directory where you saved the script, and run the following command:
 
    ```bash
-   python3 strava_filter.py "path/to/your/strava_archive.zip"
+   python3 StravaLite.py "path/to/your/strava_archive.zip"
    ``` 
     -   Replace `"path/to/your/strava_archive.zip"` with the actual path to your Strava ZIP archive file.
 
@@ -37,7 +37,7 @@ Select "Request Your Archive" and wait for an email from Strava (be patient, it 
 ## Example Usage
 
 ```bash
-python strava_filter.py "Strava_Export_12345.zip" -o filtered_activities.zip -k "Ride,Run"
+python StravaLite.py "Strava_Export_12345.zip" -o filtered_activities.zip -k "Ride,Run"
 ```
 This command will filter activities from "Strava_Export_12345.zip", create a new ZIP named "filtered_activities.zip", and only include activities of type "Ride" and "Run".
 
