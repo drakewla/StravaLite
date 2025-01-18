@@ -1,4 +1,4 @@
-# Strava Activity Filter
+# Strava Archive Activity Filter
 
 This Python script helps you filter activities from your Strava ZIP archive and create a new ZIP containing only activities matching specific types.
 
