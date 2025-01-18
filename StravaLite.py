@@ -128,17 +128,17 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Strava ZIP archive activity filter. Creates a new ZIP archive with only the activities matching certain activity types, ignore media and other stuff.")
     parser.add_argument("file", metavar='zip_path', type=str, help="Strava archive ZIP file. Should be like \"path/to/strava_export_123456-20241110.zip\" unless renamed.")
     parser.add_argument("-o", "--output", default="strava_output.zip", help="Output ZIP file. Defaults to \"strava_output.zip\"")
-    parser.add_argument("-k", "--keep", default="Ride,Walk,Hike,Run,Snowshoe,E-Bike Ride", help="Coma-separated values of activity types to keep. Remember to quote it when including spaces. Defaults to: \"Ride,Walk,Hike,Run,Snowshoe,E-Bike Ride\"")
+    parser.add_argument("-k", "--keep", default="Ride,Walk,Hike,Run,Snowshoe,E-Bike Ride", help="Comma-separated values of activity types to keep. Remember to quote it when including spaces. Defaults to: \"Ride,Walk,Hike,Run,Snowshoe,E-Bike Ride\"")
 
     args = parser.parse_args()    
 
     zip_path = args.file
     output_zip = args.output
 
-    # Create a list from the coma-separated keep argument and strip spaces
+    # Create a list from the comma-separated keep argument and strip spaces
     filter = [x.strip() for x in args.keep.split(',')]
 
-    # Check if this is the ZIP file from Strava by verifiying if activities.csv is present in the archive
+    # Check if this is the ZIP file from Strava by verifying if activities.csv is present in the archive
     check=list_zip(zip_path, 'activities.csv')
 
     if not check:
